@@ -26,6 +26,7 @@
     "hoek": "^5.0.3",
     "jquery": "^3.3.1",
     "lodash.debounce": "^4.0.8",
+    "lodash.isequal": "^4.5.0",
     "lodash.range": "^3.2.0",
     "prop-types": "^15.6.2",
     "query-string": "^6.1.0",

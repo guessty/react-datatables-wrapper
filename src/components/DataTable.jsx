@@ -4,7 +4,7 @@ import queryString from 'query-string';
 import ReactDOMServer from 'react-dom/server';
 import _range from 'lodash.range';
 import _debounce from 'lodash.debounce';
-import styled from 'styled-components'
+import _isEqual from 'lodash.isequal';
 //
 import StyledLoader from './styled/Loader'
 import StyledTable from './styled/Table'
@@ -146,7 +146,7 @@ class DataTable extends React.Component {
 
     // Page length change callback
     if (this.props.pageSizeOption) {
-      $(`#${ this.props.dataTableId }`).on('length.dt', (e, settings, len) => {
+      $(`#${ this.props.dataTableId }`).on('length.dt', () => {
         this.resetPagination();
       });
     }
@@ -169,7 +169,7 @@ class DataTable extends React.Component {
     if (nextProps.data) {
       this.reloadTableData(nextProps.data);
     }
-    if (this.props.serverSide && !_.isEqual(this.props.additionalFetchParams, nextProps.additionalFetchParams)) {
+    if (this.props.serverSide && !_isEqual(this.props.additionalFetchParams, nextProps.additionalFetchParams)) {
       // DataTables only currently listens for table related operations (sorting, searching, etc) to
       // refetch data from the server.
       // If the additionalFetchParams object changes, we also trigger a refetch of server data.
@@ -262,8 +262,6 @@ DataTable.propTypes = {
   fetchData: PropTypes.func,
   drawCallback: PropTypes.func,
   onSelect: PropTypes.func,
-  loaderTitle: PropTypes.string,
-  loaderDescription: PropTypes.string,
   pageSizeOption: PropTypes.bool,
 };
 
