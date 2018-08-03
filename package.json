@@ -1,0 +1,48 @@
+{
+  "name": "react-datatables-wrapper",
+  "version": "0.0.1",
+  "description": "A React wrapper around jQuery DataTables",
+  "keywords": [
+    "react",
+    "jQuery",
+    "DataTables"
+  ],
+  "author": "guessty",
+  "license": "MIT",
+  "main": "dist/react-datatables-wrapper.cjs.js",
+  "module": "dist/react-datatables-wrapper.esm.js",
+  "browser": "dist/react-datatables-wrapper.umd.js",
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "test": "node test/test.js",
+    "pretest": "npm run build"
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "datatables.net": "^1.10.19",
+    "hoek": "^5.0.3",
+    "jquery": "^3.3.1",
+    "lodash.debounce": "^4.0.8",
+    "lodash.range": "^3.2.0",
+    "prop-types": "^15.6.2",
+    "query-string": "^6.1.0",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "styled-components": "^3.3.3"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "eslint": "^5.2.0",
+    "eslint-config-react-tools": "^1.1.6",
+    "rollup": "^0.60.0",
+    "rollup-plugin-babel": "^3.0.7",
+    "rollup-plugin-commonjs": "^9.1.0",
+    "rollup-plugin-node-resolve": "^3.0.0"
+  }
+}
